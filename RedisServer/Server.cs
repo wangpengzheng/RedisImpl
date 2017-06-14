@@ -11,7 +11,6 @@ using ServiceStack;
 using ServiceStack.Messaging.Redis;
 using ServiceStack.Redis;
 using Funq;
-using RedisServer.Tests;
 using CommonLib;
 
 namespace RedisServer
@@ -21,7 +20,7 @@ namespace RedisServer
     {
         public object Any(Hello req)
         {
-            return new HelloResponse { Result = "Hello, " + req.Name + " .Your Id is:" + GetNextNumberTest.GetNextNumber() + " "};
+            return new HelloResponse { Result = "Hello, " + req.Name };
         }
     }
 
@@ -38,10 +37,11 @@ namespace RedisServer
             var redisFactory = new PooledRedisClientManager("localhost:6379");
             container.Register<IRedisClientsManager>(redisFactory);
             var mqHost = new RedisMqServer(redisFactory, retryCount: 2);
-            
+
             //Listens for 'Hello' messages sent with: mqClient.Publish(new Hello { ... })
             mqHost.RegisterHandler<Hello>(base.ExecuteMessage);
             mqHost.Start(); //Starts listening for messages
         }
     }
+    
 }

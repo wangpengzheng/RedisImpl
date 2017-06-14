@@ -10,18 +10,26 @@ using Funq;
 using MySql.Data.MySqlClient;
 using RedisServer.Tests;
 using RedisServer.Utils;
+using CommonLib;
 
 namespace RedisServer
 {
     class Program
     {
+        /// <summary>
+        /// http://docs.servicestack.net/redis-mq
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             // Test Operation
-            //GetNextNumberTest.GetNextNumber();
-            
-            // Start Services
+            // GetNextNumberTest.GetNextNumber("Client 1");
+
+            // Start Services, with webservices.
             StartRedisServices();
+
+            // Start simple MQ Service
+            //StartSimpleService();
 
             // Connection Test
             //ReadSQLTest();
@@ -30,9 +38,26 @@ namespace RedisServer
             Console.ReadLine();
         }
 
+        public static void StartSimpleService()
+        {
+            var redisFactory = new PooledRedisClientManager("localhost:6379");
+            var mqHost = new RedisMqServer(redisFactory, retryCount: 2);
+
+            //Server - MQ Service Impl:
+            //mqHost.RegisterHandler<Hello>(m =>
+            //    new HelloResponse { Result = "Hello, " + m.GetBody().Name + " .Your Id is:" + GetNextNumberTest.GetNextNumber() + " " });
+
+            // Only execute hello message without response.
+            mqHost.RegisterHandler<Hello>(m => GetNextNumberTest.GetNextNumber(m.GetBody().Name));
+
+            mqHost.Start();
+
+            Console.WriteLine("Server running. Press enter to terminate...");
+        }
+
         static void StartRedisServices()
         {
-            var serverURL = "http://localhost:1400/";
+            var serverURL = "http://localhost:1401/";
             var serverAppHost = new ServerAppHost();
             serverAppHost.Init();
             serverAppHost.Start(serverURL);

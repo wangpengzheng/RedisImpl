@@ -11,10 +11,12 @@ namespace RedisServer.Tests
 {
     class GetNextNumberTest
     {
-        public static long GetNextNumber()
+        public static long GetNextNumber(string name)
         {
             long ret = -1;
             MysqlConnectionHelper helper = new MysqlConnectionHelper();
+
+            Console.WriteLine("Server get the hello message with name :{0}", name);
 
             //for (int i = 0; i < 20; i++)
             //{

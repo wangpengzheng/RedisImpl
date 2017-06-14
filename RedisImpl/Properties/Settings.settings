@@ -1,0 +1,102 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
+  <Profiles/>
+<Settings>
+    <Setting Name="Domain" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Zjzxlh</Value>
+    </Setting>
+    <Setting Name="UserName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">MSCRMAdmin</Value>
+    </Setting>
+    <Setting Name="WebUriDev" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://10.50.8.43/ubgCRM/api/data/v8.0/</Value>
+    </Setting>
+    <Setting Name="DiscoveryUriDev" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://10.50.8.43/XRMServices/2011/Discovery.svc</Value>
+    </Setting>
+    <Setting Name="OrganizationUriDev" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://10.50.8.43/ubgCRM/XRMServices/2011/Organization.svc</Value>
+    </Setting>
+    <Setting Name="PassWord" Type="System.String" Scope="User">
+      <Value Profile="(Default)">XHHcrm!</Value>
+    </Setting>
+    <Setting Name="WebUriTest" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://10.50.8.42/ubgCRM/api/data/v8.0/</Value>
+    </Setting>
+    <Setting Name="DiscoveryUriTest" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://10.50.8.42/XRMServices/2011/Discovery.svc</Value>
+    </Setting>
+    <Setting Name="OrganizationUriTest" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://10.50.8.42/ubgCRM/XRMServices/2011/Organization.svc</Value>
+    </Setting>
+    <Setting Name="DomainTest" Type="System.String" Scope="User">
+      <Value Profile="(Default)">xhhtest</Value>
+    </Setting>
+    <Setting Name="UserNameTest" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CRMAdmin</Value>
+    </Setting>
+    <Setting Name="PassWordTest" Type="System.String" Scope="User">
+      <Value Profile="(Default)">XHHcrm!</Value>
+    </Setting>
+    <Setting Name="OrganizationUriOfficial" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://10.50.60.7/ubgCRM/XRMServices/2011/Organization.svc</Value>
+    </Setting>
+    <Setting Name="WebUriOfficial" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://10.50.60.7/ubgCRM/api/data/v8.0/</Value>
+    </Setting>
+    <Setting Name="DiscoveryUriOfficial" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://10.50.60.7/XRMServices/2011/Discovery.svc</Value>
+    </Setting>
+    <Setting Name="Dev1Address" Type="System.String" Scope="User">
+      <Value Profile="(Default)">10.50.8.43</Value>
+    </Setting>
+    <Setting Name="Test1Address" Type="System.String" Scope="User">
+      <Value Profile="(Default)">10.50.8.42</Value>
+    </Setting>
+    <Setting Name="YW1Address" Type="System.String" Scope="User">
+      <Value Profile="(Default)">10.50.8.65 </Value>
+    </Setting>
+    <Setting Name="Official1Address" Type="System.String" Scope="User">
+      <Value Profile="(Default)">10.50.60.7</Value>
+    </Setting>
+    <Setting Name="Official2Address" Type="System.String" Scope="User">
+      <Value Profile="(Default)">10.50.60.8</Value>
+    </Setting>
+    <Setting Name="Dev1SQLAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">10.50.8.44</Value>
+    </Setting>
+    <Setting Name="Dev2SQLAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">10.50.8.30</Value>
+    </Setting>
+    <Setting Name="Dev2Address" Type="System.String" Scope="User">
+      <Value Profile="(Default)">10.50.8.30</Value>
+    </Setting>
+    <Setting Name="Test1SQLAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">10.50.8.38</Value>
+    </Setting>
+    <Setting Name="YW1SQLAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">10.50.8.65</Value>
+    </Setting>
+    <Setting Name="OfficialSQLAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">10.50.60.9</Value>
+    </Setting>
+    <Setting Name="SQLDBReader" Type="System.String" Scope="User">
+      <Value Profile="(Default)">crmReader</Value>
+    </Setting>
+    <Setting Name="DomainYW" Type="System.String" Scope="User">
+      <Value Profile="(Default)">zjzxlh</Value>
+    </Setting>
+    <Setting Name="UserNameYW" Type="System.String" Scope="User">
+      <Value Profile="(Default)">mscrmadminyw</Value>
+    </Setting>
+    <Setting Name="PassWordYW" Type="System.String" Scope="User">
+      <Value Profile="(Default)">XHHcrm!</Value>
+    </Setting>
+    <Setting Name="WebUriYW" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://10.50.8.65/ubgCRMYW/api/data/v8.0/</Value>
+    </Setting>
+    <Setting Name="OrganizationUriYW" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://10.50.8.65/ubgCRMYW/XRMServices/2011/Organization.svc</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

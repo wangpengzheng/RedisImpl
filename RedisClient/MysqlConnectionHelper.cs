@@ -20,7 +20,7 @@ namespace RedisServer.Utils
         {
             string M_str_sqlcon = "server=localhost;user id=root;password=root;database=classicmodels"; //根据自己的设置
             mysqlcon = new MySqlConnection(M_str_sqlcon);
-            mysqlcon.Open();
+            //mysqlcon.Open();
         }
 
         public void DisposeConnection()
