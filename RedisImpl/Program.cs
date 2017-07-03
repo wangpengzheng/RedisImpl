@@ -24,7 +24,9 @@ namespace RedisImpl
 
             //RedisCommonOperation.GetObjectPerformanceTest();
 
-            DistributedLockWithRedis.StartCounter();
+            //DistributedLockWithRedis.StartCounter();
+
+            DistributedLockWithRedis.SimpleDistributedLockTest();
 
             Console.ReadLine();
         }

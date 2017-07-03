@@ -16,6 +16,33 @@ namespace RedisImpl.Demo
     /// </summary>
     public class DistributedLockWithRedis
     {
+        public static void SimpleDistributedLockTest()
+        {
+            //var redisClient = new RedisClient("localhost", 6379);// Constant.RedisConnectionIP);
+            var redisClient = new RedisClient(Constant.RedisConnectionIP, Constant.RedisConnectionPort, Constant.RedisConnectionPassword);
+            using (redisClient.AcquireLock("testlock"))
+            {
+                Console.WriteLine("Hi Lock");
+            }
+        }
+
+        public static void SimpleDistributedLockTestWithDelegate()
+        {
+            var actionFn = (Action)delegate
+            {
+                var redisClient = new RedisClient(Constant.RedisConnectionIP,Constant.RedisConnectionPort, Constant.RedisConnectionPassword);
+                using (redisClient.AcquireLock("testlock"))
+                {
+                    Console.WriteLine("client");
+                }
+            };
+
+            //Asynchronously invoke the above delegate in a background thread
+            IAsyncResult ret = actionFn.BeginInvoke(null, null);
+            
+        }
+
+
         public static void StartCounter()
         {
             //The number of concurrent clients to run
