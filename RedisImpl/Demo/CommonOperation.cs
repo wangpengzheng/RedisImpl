@@ -1,4 +1,5 @@
 ﻿using CommonLib;
+using ConsoleTest.Util;
 using ServiceStack.Redis;
 using ServiceStack.Text;
 using System;
@@ -11,9 +12,33 @@ namespace RedisKeyValueCommonOperation
 {
     class RedisCommonOperation
     {
+        public static void SetString()
+        {
+            using (var redis = new RedisClient(Constant.RedisConnectionIP, Constant.RedisConnectionPort, Constant.RedisConnectionPassword))
+            //using (var redis = new RedisClient("localhost:6379"))
+            {
+                redis.Set("TestLockString", "wang");
+
+                Console.WriteLine("Save finished");
+                //Console.ReadLine();
+            }
+        }
+
+        public static void GetString()
+        {
+            using (var redis = new RedisClient(Constant.RedisConnectionIP, Constant.RedisConnectionPort, Constant.RedisConnectionPassword))
+            //using (var redis = new RedisClient("localhost:6379"))
+            {
+                Console.WriteLine(System.Text.Encoding.UTF8.GetString(redis.Get("TestLockString")));
+
+                Console.WriteLine("Get finished");
+                Console.ReadLine();
+            }
+        }
+
         public static void SetObject()
         {
-            using (var redis = new RedisClient("172.19.18.44:6379"))
+            using (var redis = new RedisClient(Constant.RedisConnectionIP, Constant.RedisConnectionPort, Constant.RedisConnectionPassword))
             //using (var redis = new RedisClient("localhost:6379"))
             {
                 var redisUsers = redis.As<Person>();
@@ -32,7 +57,7 @@ namespace RedisKeyValueCommonOperation
         public static void GetObject()
         {
             //using (var redis = new RedisClient("172.19.18.44:6379"))
-            using (var redis = new RedisClient("localhost:6379"))
+            using (var redis = new RedisClient(Constant.RedisConnectionIP, Constant.RedisConnectionPort, Constant.RedisConnectionPassword))
             {
                 var redisUsers = redis.As<Person>();
                 
@@ -46,7 +71,7 @@ namespace RedisKeyValueCommonOperation
 
         public static void GetObjectPerformanceTest()
         {
-            using (var redis = new RedisClient("172.19.18.44:6379"))
+            using (var redis = new RedisClient(Constant.RedisConnectionIP, Constant.RedisConnectionPort, Constant.RedisConnectionPassword))
             //using (var redis = new RedisClient("localhost:6379"))
             {
                 var redisUsers = redis.As<Person>();

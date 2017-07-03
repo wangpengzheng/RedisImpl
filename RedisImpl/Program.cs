@@ -26,7 +26,10 @@ namespace RedisImpl
 
             //DistributedLockWithRedis.StartCounter();
 
-            DistributedLockWithRedis.SimpleDistributedLockTest();
+            //DistributedLockWithRedis.SimpleDistributedLockTest();
+
+            RedisCommonOperation.SetString();
+            RedisCommonOperation.GetString();
 
             Console.ReadLine();
         }
